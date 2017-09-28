@@ -3,7 +3,8 @@ version: '2'
 services:
 
   elasticsearch:
-    build: elasticsearch/
+    build: https://github.com/pkaramol/docker-elk/blob/master/elasticsearch/Dockerfile
+    # build: elasticsearch/
     volumes:
       - ./elasticsearch/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
     ports:
@@ -15,7 +16,8 @@ services:
       - elk
 
   logstash:
-    build: logstash/
+    build: https://github.com/pkaramol/docker-elk/blob/master/logstash/Dockerfile
+    # build: logstash/
     volumes:
       - ./logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml
       - ./logstash/pipeline:/usr/share/logstash/pipeline
@@ -29,7 +31,8 @@ services:
       - elasticsearch
 
   kibana:
-    build: kibana/
+    build: https://github.com/pkaramol/docker-elk/blob/master/kibana/Dockerfile
+    # build: kibana/
     volumes:
       - ./kibana/config/:/usr/share/kibana/config
     ports:
